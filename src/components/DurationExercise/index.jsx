@@ -50,7 +50,7 @@ function DurationExercise({ name }) {
               padding: '0.75rem 2rem',
               borderRadius: '8px',
               border: 'none',
-              background: '#10b981',
+              background: 'linear-gradient(135deg, #f9e04b, #6abf3e)',
               color: '#fff',
               fontWeight: 600,
             }}
@@ -66,7 +66,7 @@ function DurationExercise({ name }) {
               padding: '0.75rem 2rem',
               borderRadius: '8px',
               border: 'none',
-              background: '#ef4444',
+              background: 'linear-gradient(135deg, #ef4444, #7f1d1d)',
               color: '#fff',
               fontWeight: 600,
             }}

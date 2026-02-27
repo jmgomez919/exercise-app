@@ -6,22 +6,34 @@ import DurationExercise from './components/DurationExercise';
 function App() {
   const [selectedExercise, setSelectedExercise] = useState(null);
 
-  // Screen A — menu
+  // Screen A — exercise menu
   if (!selectedExercise) {
     return <ExerciseMenu onSelect={setSelectedExercise} />;
   }
 
-  // Screen B — exercise screen
+  // Screen B — active exercise
   return (
-    <div style={{ padding: '2rem', maxWidth: '420px', margin: '0 auto' }}>
+    <div style={{ padding: '2rem', maxWidth: '440px', margin: '0 auto' }}>
+      {/* Back link — kept small so the exercise name reads as the primary heading */}
       <button
         onClick={() => setSelectedExercise(null)}
-        style={{ marginBottom: '1.5rem', cursor: 'pointer' }}
+        style={{
+          background: 'none',
+          border: 'none',
+          color: '#6b7280',
+          fontSize: '0.875rem',
+          padding: 0,
+          marginBottom: '1rem',
+          cursor: 'pointer',
+        }}
       >
         ← Back to Menu
       </button>
 
-      <h2>{selectedExercise.name}</h2>
+      {/* Exercise name is the top-most prominent text on this screen */}
+      <h2 style={{ fontSize: '1.75rem', marginBottom: '0.25rem' }}>
+        {selectedExercise.name}
+      </h2>
 
       {selectedExercise.type === 'repetition' ? (
         <RepetitionExercise name={selectedExercise.name} />

@@ -14,7 +14,7 @@ function DurationExercise({ name }) {
       clearInterval(intervalRef.current);
     }
 
-    // Cleanup: clears interval on re-run or unmount
+    // Cleanup on re-run or unmount to prevent stale intervals
     return () => clearInterval(intervalRef.current);
   }, [isRunning]);
 
@@ -24,25 +24,28 @@ function DurationExercise({ name }) {
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-      <h3 style={{ marginBottom: '1.5rem' }}>{name}</h3>
+    <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+      {/* "Timer" label makes the counter's purpose obvious at a glance */}
+      <p style={{ color: '#6b7280', fontSize: '0.875rem', margin: '0 0 0.25rem' }}>
+        Timer
+      </p>
 
-      <p style={{ fontSize: '4rem', fontWeight: 'bold', margin: '0 0 1.5rem' }}>
-        {seconds}
+      <p style={{ fontSize: '5rem', fontWeight: 'bold', margin: '0 0 2rem', lineHeight: 1 }}>
+        {seconds}s
       </p>
 
       <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+        {/* Start and Stop are mutually exclusive — prevents multiple intervals */}
         {!isRunning && (
           <button
             onClick={() => setIsRunning(true)}
             style={{
               padding: '0.75rem 2rem',
-              fontSize: '1rem',
-              cursor: 'pointer',
               borderRadius: '8px',
               border: 'none',
               background: '#10b981',
               color: '#fff',
+              fontWeight: 600,
             }}
           >
             Start
@@ -54,12 +57,11 @@ function DurationExercise({ name }) {
             onClick={() => setIsRunning(false)}
             style={{
               padding: '0.75rem 2rem',
-              fontSize: '1rem',
-              cursor: 'pointer',
               borderRadius: '8px',
               border: 'none',
               background: '#ef4444',
               color: '#fff',
+              fontWeight: 600,
             }}
           >
             Stop
@@ -70,11 +72,10 @@ function DurationExercise({ name }) {
           onClick={handleReset}
           style={{
             padding: '0.75rem 2rem',
-            fontSize: '1rem',
-            cursor: 'pointer',
             borderRadius: '8px',
-            border: '1px solid #ddd',
+            border: '1px solid #d1d5db',
             background: '#fff',
+            color: '#374151',
           }}
         >
           Reset

@@ -4,10 +4,13 @@ function RepetitionExercise({ name }) {
   const [count, setCount] = useState(0);
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-      <h3 style={{ marginBottom: '1.5rem' }}>{name}</h3>
+    <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+      {/* "Reps" label makes the counter's purpose obvious at a glance */}
+      <p style={{ color: '#6b7280', fontSize: '0.875rem', margin: '0 0 0.25rem' }}>
+        Reps
+      </p>
 
-      <p style={{ fontSize: '4rem', fontWeight: 'bold', margin: '0 0 1.5rem' }}>
+      <p style={{ fontSize: '5rem', fontWeight: 'bold', margin: '0 0 2rem', lineHeight: 1 }}>
         {count}
       </p>
 
@@ -16,12 +19,11 @@ function RepetitionExercise({ name }) {
           onClick={() => setCount((c) => c + 1)}
           style={{
             padding: '0.75rem 2rem',
-            fontSize: '1rem',
-            cursor: 'pointer',
             borderRadius: '8px',
             border: 'none',
             background: '#3b82f6',
             color: '#fff',
+            fontWeight: 600,
           }}
         >
           Increment
@@ -31,11 +33,10 @@ function RepetitionExercise({ name }) {
           onClick={() => setCount(0)}
           style={{
             padding: '0.75rem 2rem',
-            fontSize: '1rem',
-            cursor: 'pointer',
             borderRadius: '8px',
-            border: '1px solid #ddd',
+            border: '1px solid #d1d5db',
             background: '#fff',
+            color: '#374151',
           }}
         >
           Reset

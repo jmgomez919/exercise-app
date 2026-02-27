@@ -18,7 +18,7 @@ const TYPE_COLORS = {
 function ExerciseMenu({ onSelect }) {
   return (
     <div style={{ padding: '2rem', maxWidth: '440px', margin: '0 auto' }}>
-      <h1 style={{ fontSize: '1.75rem', marginBottom: '0.25rem' }}>Exercise Tracker</h1>
+      <h1 style={{ fontSize: '1.75rem', marginBottom: '0.25rem', fontFamily: 'Courier New, monospace' }}>Exercise Tracker</h1>
       <p style={{ color: '#6b7280', marginBottom: '1.5rem', marginTop: 0 }}>
         Select an exercise to begin
       </p>

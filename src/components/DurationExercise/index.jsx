@@ -49,7 +49,7 @@ function DurationExercise({ name }) {
             style={{
               padding: '0.75rem 2rem',
               borderRadius: '8px',
-              border: 'none',
+              border: '2px solid #000',
               background: 'linear-gradient(135deg, #f9e04b, #6abf3e)',
               color: '#fff',
               fontWeight: 600,
@@ -65,7 +65,7 @@ function DurationExercise({ name }) {
             style={{
               padding: '0.75rem 2rem',
               borderRadius: '8px',
-              border: 'none',
+              border: '2px solid #000',
               background: 'linear-gradient(135deg, #ef4444, #7f1d1d)',
               color: '#fff',
               fontWeight: 600,
@@ -80,7 +80,7 @@ function DurationExercise({ name }) {
           style={{
             padding: '0.75rem 2rem',
             borderRadius: '8px',
-            border: '1px solid #d1d5db',
+            border: '2px solid #000',
             background: '#fff',
             color: '#374151',
           }}

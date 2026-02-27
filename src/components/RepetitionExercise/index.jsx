@@ -22,7 +22,7 @@ function RepetitionExercise({ name }) {
           style={{
             padding: '0.75rem 2rem',
             borderRadius: '8px',
-            border: 'none',
+            border: '2px solid #000',
             background: '#3b82f6',
             color: '#fff',
             fontWeight: 600,
@@ -36,7 +36,7 @@ function RepetitionExercise({ name }) {
           style={{
             padding: '0.75rem 2rem',
             borderRadius: '8px',
-            border: '1px solid #d1d5db',
+            border: '2px solid #000',
             background: '#fff',
             color: '#374151',
           }}

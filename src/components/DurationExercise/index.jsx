@@ -32,20 +32,39 @@ function DurationExercise({ name }) {
       </p>
 
       <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-        <button
-          onClick={() => setIsRunning((r) => !r)}
-          style={{
-            padding: '0.75rem 2rem',
-            fontSize: '1rem',
-            cursor: 'pointer',
-            borderRadius: '8px',
-            border: 'none',
-            background: isRunning ? '#ef4444' : '#10b981',
-            color: '#fff',
-          }}
-        >
-          {isRunning ? 'Stop' : 'Start'}
-        </button>
+        {!isRunning && (
+          <button
+            onClick={() => setIsRunning(true)}
+            style={{
+              padding: '0.75rem 2rem',
+              fontSize: '1rem',
+              cursor: 'pointer',
+              borderRadius: '8px',
+              border: 'none',
+              background: '#10b981',
+              color: '#fff',
+            }}
+          >
+            Start
+          </button>
+        )}
+
+        {isRunning && (
+          <button
+            onClick={() => setIsRunning(false)}
+            style={{
+              padding: '0.75rem 2rem',
+              fontSize: '1rem',
+              cursor: 'pointer',
+              borderRadius: '8px',
+              border: 'none',
+              background: '#ef4444',
+              color: '#fff',
+            }}
+          >
+            Stop
+          </button>
+        )}
 
         <button
           onClick={handleReset}

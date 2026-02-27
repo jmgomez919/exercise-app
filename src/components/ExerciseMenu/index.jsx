@@ -9,10 +9,10 @@ const EXERCISES = [
   { name: 'Running',  type: 'duration' },
 ];
 
-// Visual accent color per exercise type
-const TYPE_COLORS = {
-  repetition: '#3b82f6',
-  duration:   '#10b981',
+// Badge styles per exercise type
+const BADGE_STYLES = {
+  repetition: { background: '#1e3a8a', color: '#fff' },
+  duration:   { background: '#fde047', color: '#000' },
 };
 
 function ExerciseMenu({ onSelect }) {
@@ -36,8 +36,6 @@ function ExerciseMenu({ onSelect }) {
             marginBottom: '0.6rem',
             background: '#fff',
             border: '2px solid #000',
-            // Left accent bar indicates exercise type at a glance
-            borderLeft: `4px solid ${TYPE_COLORS[exercise.type]}`,
             borderRadius: '8px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             textAlign: 'left',
@@ -51,12 +49,13 @@ function ExerciseMenu({ onSelect }) {
 
           {/* Type badge */}
           <span style={{
+            fontFamily: 'Arial, sans-serif',
             fontSize: '0.7rem',
             fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.05em',
-            color: '#fff',
-            background: TYPE_COLORS[exercise.type],
+            background: BADGE_STYLES[exercise.type].background,
+            color: BADGE_STYLES[exercise.type].color,
             padding: '3px 10px',
             borderRadius: '99px',
           }}>

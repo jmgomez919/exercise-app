@@ -23,15 +23,22 @@ function DurationExercise({ name }) {
     setSeconds(0);
   };
 
+  // Format total seconds as MM:SS with zero-padded digits (e.g. 0 → "00:00", 75 → "01:15")
+  const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
+  const secs    = String(seconds % 60).padStart(2, '0');
+  const display = `${minutes}:${secs}`;
+
   return (
     <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+      <h2 style={{ marginBottom: '1.5rem' }}>{name}</h2>
+
       {/* "Timer" label makes the counter's purpose obvious at a glance */}
       <p style={{ color: '#6b7280', fontSize: '0.875rem', margin: '0 0 0.25rem' }}>
         Timer
       </p>
 
       <p style={{ fontSize: '5rem', fontWeight: 'bold', margin: '0 0 2rem', lineHeight: 1 }}>
-        {seconds}s
+        {display}
       </p>
 
       <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>

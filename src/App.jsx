@@ -30,11 +30,6 @@ function App() {
         ← Back to Menu
       </button>
 
-      {/* Exercise name is the top-most prominent text on this screen */}
-      <h2 style={{ fontSize: '1.75rem', marginBottom: '0.25rem' }}>
-        {selectedExercise.name}
-      </h2>
-
       {selectedExercise.type === 'repetition' ? (
         <RepetitionExercise name={selectedExercise.name} />
       ) : (

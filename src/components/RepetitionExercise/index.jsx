@@ -5,6 +5,8 @@ function RepetitionExercise({ name }) {
 
   return (
     <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+      <h2 style={{ marginBottom: '1.5rem' }}>{name}</h2>
+
       {/* "Reps" label makes the counter's purpose obvious at a glance */}
       <p style={{ color: '#6b7280', fontSize: '0.875rem', margin: '0 0 0.25rem' }}>
         Reps
